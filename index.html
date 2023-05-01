@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rico's History Quiz</title>
+</head>
+  <link rel="stylesheet" type="text/css" href="quiz.css">
+<body>
+	<h1>Rico's History Quiz</h1>
+	<form id="quiz-form" onsubmit="return calculateScore()">
+		<h2>Question 1:</h2>
+		<p>What year did World War 2 end?</p>
+		<input type="radio" name="q1" value="a">a) 1941<br>
+		<input type="radio" name="q1" value="b">b) 1944<br>
+		<input type="radio" name="q1" value="c">c) 1945<br>
+
+		<h2>Question 2:</h2>
+		<p>When year did the first airplane take off?</p>
+		<input type="radio" name="q2" value="a">a) 1899<br>
+		<input type="radio" name="q2" value="b">b) 1901<br>
+		<input type="radio" name="q2" value="c">c) 1903<br>
+
+		<h2>Question 3:</h2>
+		<p>What year did the Titanic sink?</p>
+		<input type="radio" name="q3" value="a">a) 1905<br>
+		<input type="radio" name="q3" value="b">b) 1911<br>
+		<input type="radio" name="q3" value="c">c) 1912<br>
+
+
+
+		<button type="submit">Submit</button>
+	</form>
+
+	<p id="score"></p>
+
+	<script>
+		function calculateScore() {
+			var score = 0;
+			var q1 = document.querySelector('input[name="q1"]:checked').value;
+			var q2 = document.querySelector('input[name="q2"]:checked').value;
+			var q3 = document.querySelector('input[name="q3"]:checked').value;
+			
+			if (q1 == "c") {
+				score += 20;
+			}
+
+			if (q2 == "c") {
+				score += 20;
+			}
+
+			if (q3 == "c") {
+				score += 20;
+			}
+
+
+			document.getElementById("score").innerHTML = "
